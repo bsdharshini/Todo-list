@@ -1,37 +1,37 @@
-var todoLists = ["New","Old"];
-var input = prompt("Enter your option: ");
-var add = ["Add","add"];
-var view = ["View","view"];
-var del = ["Delete","delete"];
-var quit = ["Quit","quit","q","Q"];
-if(add.includes(input) || view.includes(input)|| del.includes(input)|| quit.includes(input)){
+var todoLists = ["New","Old"]; // todolist
+var input = prompt("Enter your option: "); // getting first input
+var add = ["Add","add"]; // add possibility
+var view = ["View","view"];// view possibility
+var del = ["Delete","delete"];// delete possibility
+var quit = ["Quit","quit","q","Q"];// quit possibility
 
-    if(add.includes(input)){
+//if the input is not quit
+if(!quit.includes(input)){
+    if(add.includes(input)){ // if the input is add
         newAdd();
     }
 
-    if(view.includes(input)){
+    else if(view.includes(input)){ // if input is view
         viewList();
     }
 
-    if(del.includes(input)){
+    else if(del.includes(input)){ // if input is delete
         deleteItem();
     }
-
-    if(quit.includes(input)){
-        console.log("Quitting the application!!!");
-        viewList();
+    else{       // else enter proper input
+        validInput();
     }
 }
-else{
-    validInput();
+else{ // if quit
+    console.log("Quitting the application!!!");
+    viewList(); 
 }
-
-
-
 function getInput(){
     input = prompt("Enter your next option: ");
 }
+
+// add new item to list
+
 function newAdd(){
     console.log("Todo List before adding a item");
     viewList();
@@ -40,6 +40,9 @@ function newAdd(){
     console.log("New todo item is added to the list");
     viewList();
 }
+
+// view list
+
 function viewList(){
     console.log("****************");
     for(var todoList=0; todoList<todoLists.length; todoList++){
@@ -47,6 +50,9 @@ function viewList(){
     }
     console.log("****************");
 }
+
+// delete list
+
 function deleteItem(){
     var delIndex = parseInt(prompt("Enter the todo item number to delete: "));
     for(var del_index = 0; del_index<todoLists.length;del_index++){
@@ -63,6 +69,9 @@ function deleteItem(){
         }
     }    
 }
+
+// enter proper input
+
 function validInput(){
     input = prompt("Enter your valid option: ");
 }
