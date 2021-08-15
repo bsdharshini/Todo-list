@@ -1,8 +1,8 @@
-# Todo-list
-Javascript code
-Features:
-Add new item todo
-View the todo items
-Delete the todo item 
-Quit from the application
+# Todo-Item - Javascript code
+**Features:**
+
+1) Add new item todo, 
+2) View the todo items, 
+3) Delete the todo item,  
+4) Quit from the application, 
 
